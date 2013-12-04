@@ -24,14 +24,14 @@ var markedOpts = {
 program
   .version(pkg.version)
   .option('-v, --verbose', 'Increase verbosity')
-  .option('-p, --port', 'Port on which to run the server')
+  .option('-p, --port <port>', 'Port on which to run the server')
   .option('-c, --css <style>', 'Customize css')
   .parse(process.argv)
 
 log.heading = 'mdview'
 if (program.verbose) log.level = 'verbose'
 
-var port = program.port || 3000
+var port = +program.port || 3000
 
 var app = express()
 
@@ -65,8 +65,8 @@ if (program.css) {
   stylesheet = '/css/style.css'
 }
 
-log.info('load', 'theme', theme)
-log.info('load', 'stylesheet', stylesheet)
+log.verbose('load', 'theme', theme)
+log.verbose('load', 'stylesheet', stylesheet)
 
 
 app.use(express.static(__dirname + '/public'))
