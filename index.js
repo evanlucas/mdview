@@ -28,6 +28,8 @@ program
   .option('-c, --css <style>', 'Customize css')
   .parse(process.argv)
 
+var serveDir = program.args.shift() || process.env.MDVIEW_ENV_DIR || cwd
+
 log.heading = 'mdview'
 if (program.verbose) log.level = 'verbose'
 
@@ -35,6 +37,7 @@ var port = +program.port || 3000
 
 var app = express()
 
+log.verbose('serve', 'serving from', serveDir)
 
 var exts = ['.md', '.markdown']
 var styles = ['default', 'github', 'npm']
@@ -74,11 +77,14 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
 app.set('view options', { doctype: 'html', pretty: false })
 
+if (program.verbose)
+  app.use(express.logger('dev'))
+
 app.use(function(req, res, next) {
-  res.locals.cwd = cwd
+  res.locals.cwd = serveDir
   res.locals.stylesheet = stylesheet
   res.locals.theme = theme
-  fs.readdir(cwd, function(err, files) {
+  fs.readdir(serveDir, function(err, files) {
     if (err) return next(err)
     files = files.filter(function(file) {
       return ~exts.indexOf(path.extname(file))
@@ -95,11 +101,11 @@ app.get('/', function(req, res) {
 app.get('/:filename', function(req, res, next) {
   var pathname = req.params.filename
   req.filepath = pathname
-  var fullPath = path.join(cwd, pathname)
+  var fullPath = path.join(serveDir, pathname)
   fs.exists(fullPath, function(e) {
     res.locals.path = path.basename(pathname)
     if (!e) {
-      res.render('404')
+      res.status(404).render('404')
     } else {
       next()
     }
@@ -108,21 +114,17 @@ app.get('/:filename', function(req, res, next) {
 
 app.get('/:filename', function(req, res) {
   var pathname = req.filepath
-  var fullPath = path.join(cwd, pathname)
+  var fullPath = path.join(serveDir, pathname)
   if (!(~exts.indexOf(path.extname(pathname)))) {
-    res.render('invalid')
+    res.status(500).render('invalid')
   } else {
     fs.readFile(fullPath, 'utf8', function(err, doc) {
       if (err) {
-        res.render('invalid', {
-          path: path.basename(pathname)
-        })
+        res.status(500).render('invalid')
       } else {
         marked(doc, markedOpts, function(err, contents) {
           if (err) {
-            res.render('invalid', {
-              path: path.basename(pathname)
-            })
+            res.status(500).render('invalid')
           } else {
             res.render('file', {
               title: path.basename(pathname),
