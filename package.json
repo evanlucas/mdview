@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "A simple markdown viewer",
   "main": "index.js",
+  "bin": {
+    "mdview": "index.js"
+  },
   "dependencies": {
     "commander": "~2.0.0",
     "express": "~3.4.4",
