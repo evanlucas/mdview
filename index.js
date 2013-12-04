@@ -1,12 +1,14 @@
-var marked = require('marked')
+#!/usr/bin/env node
+
+var marked  = require('marked')
   , express = require('express')
   , program = require('commander')
-  , fs = require('fs')
-  , hljs = require('highlight.js')
-  , path = require('path')
-  , pkg = { version: '0.0.1' }
-  , log = require('npmlog')
-  , cwd = process.cwd()
+  , fs      = require('fs')
+  , hljs    = require('highlight.js')
+  , path    = require('path')
+  , pkg     = { version: '0.0.1' }
+  , log     = require('npmlog')
+  , cwd     = process.cwd()
 
 var markedOpts = {
   gfm: true,
@@ -93,6 +95,7 @@ app.get('/', function(req, res) {
   res.render('files')
 })
 
+// ugh, fix...this is ugly
 app.get('/:filename', function(req, res) {
   var pathname = req.params.filename
   var fullPath = path.join(cwd, pathname)
