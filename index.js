@@ -74,9 +74,6 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
 app.set('view options', { doctype: 'html', pretty: false })
 
-
-
-
 app.use(function(req, res, next) {
   res.locals.cwd = cwd
   res.locals.stylesheet = stylesheet
@@ -95,46 +92,49 @@ app.get('/', function(req, res) {
   res.render('files')
 })
 
-// ugh, fix...this is ugly
-app.get('/:filename', function(req, res) {
+app.get('/:filename', function(req, res, next) {
   var pathname = req.params.filename
+  req.filepath = pathname
   var fullPath = path.join(cwd, pathname)
   fs.exists(fullPath, function(e) {
+    res.locals.path = path.basename(pathname)
     if (!e) {
-      res.render('404', {
-        path: path.basename(pathname)
-      })
+      res.render('404')
     } else {
-      if (!(~exts.indexOf(path.extname(pathname)))) {
+      next()
+    }
+  })
+})
+
+app.get('/:filename', function(req, res) {
+  var pathname = req.filepath
+  var fullPath = path.join(cwd, pathname)
+  if (!(~exts.indexOf(path.extname(pathname)))) {
+    res.render('invalid')
+  } else {
+    fs.readFile(fullPath, 'utf8', function(err, doc) {
+      if (err) {
         res.render('invalid', {
           path: path.basename(pathname)
         })
       } else {
-        fs.readFile(fullPath, 'utf8', function(err, doc) {
+        marked(doc, markedOpts, function(err, contents) {
           if (err) {
             res.render('invalid', {
               path: path.basename(pathname)
             })
           } else {
-            marked(doc, markedOpts, function(err, contents) {
-              if (err) {
-                res.render('invalid', {
-                  path: path.basename(pathname)
-                })
-              } else {
-                res.render('file', {
-                  title: path.basename(pathname),
-                  content: contents
-                })
-              }
+            res.render('file', {
+              title: path.basename(pathname),
+              content: contents
             })
           }
         })
       }
-    }
-  })
+    })
+  }
 })
 
 app.listen(port)
 log.info('listen', port)
-log.info('help', 'To view the page,', 'open http://localhost:'+port)
+log.info('listen', 'To view the page,', 'open http://localhost:'+port)
