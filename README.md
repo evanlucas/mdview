@@ -42,3 +42,6 @@ Currently, the following styles are available by default
 
 One can pass in the path to another css file that will be used
 
+## License
+
+MIT
