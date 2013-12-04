@@ -1,0 +1,20 @@
+doctype 5
+html
+  head
+    link(rel='stylesheet', href=stylesheet)
+    title #{title}
+  body
+    .container
+      h3 MDView - a simple markdown viewer
+      h6 Using the <em>#{theme}</em> theme
+      table.table.files
+        thead
+          tr
+            th Files
+        tbody
+          - each file in files
+            tr
+              td
+                a(href='/'+file) #{file}
+      block mainContent
+      include copyright

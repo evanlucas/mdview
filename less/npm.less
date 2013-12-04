@@ -1,0 +1,206 @@
+@import "variables.less";
+@import "base.less";
+
+body {
+  font: 14px "Lucida Grande", sans-serif;
+  color: #666;
+  margin: 0;
+  padding: 0;
+  background: #f4f4f2;
+  border-top: solid 6px #cc3d33;
+  text-align: center;
+}
+
+pre.sh {
+  background: #fff;
+  padding: 0.4em 0;
+  
+  ::before {
+    content: "$ ";
+  }
+}
+
+code {
+  font-size: 1em;
+  font-family: monospace, serif;
+  _font-family: "courier new", monospace;
+  color: inherit;
+  background: transparent;
+}
+
+a:link,
+a:visited,
+a:active {
+  text-decoration: none;
+  color: #cc3d33;
+}
+a:link:hover,
+a:visited:hover,
+a:active:hover {
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #000;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 21px; }
+h3 { font-size: 16px; }
+.readme {
+  text-align: left;
+  h1 {
+    font-size: 24px;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+  span.name {
+    display: inline-block;
+    padding: 0.5em 32px 0.5em 16px;
+    background-color: #fff;
+    color: #cc3d33;
+  }
+  
+  pre {
+    border-radius: 0;
+    max-width: 100%;
+    overflow: auto;
+    border: none;
+    color: #666;
+    font-size: 14px;
+    font-family: Monaco, monospace;
+    background-color: #f9f9f8;
+    padding: 16px;
+  }
+  
+  .markdown-body {
+    padding: 16px;
+    background-color: #fff;
+  }
+}
+
+.comment,
+.template_comment,
+.diff .header,
+.javadoc {
+  color: #666 !important;
+}
+  
+.keyword,
+.css .rule .keyword,
+.winutils,
+.javascript .title,
+.nginx .title,
+.subst,
+.request,
+.status {
+  color: #c96 !important;
+}
+
+.number,
+.hexcolor,
+.ruby .constant {
+  color: #690 !important;
+}
+
+.string,
+.tag .value,
+.phpdoc,
+.tex .formula {
+  color: #690;
+}
+
+.title,
+.id {
+  font-weight: bold;
+  color: #900;
+}
+
+.javascript .title,
+.lisp .title,
+.clojure .title,
+.subst {
+  font-weight: normal;
+}
+
+.class .title,
+.haskell .type,
+.vhdl .literal,
+.tex .command {
+  font-weight: bold;
+  color: #458;
+}
+
+.tag,
+.tag .title,
+.rules .property,
+.django .tag .keyword {
+  font-weight: normal;
+  color: #000080;
+}
+
+.attribute,
+.variable,
+.lisp .body {
+  color: #c96;
+}
+
+.regexp {
+  color: #690;
+}
+
+.class {
+  font-weight: bold;
+  color: #458;
+}
+
+.symbol,
+.ruby .symbol .string,
+.lisp .keyword,
+.tex .special,
+.prompt {
+  color: #333;
+}
+
+.built_in,
+.lisp .title,
+.clojure .built_in {
+  color: #c96;
+}
+
+.preprocessor,
+.pi,
+.doctype,
+.shebang,
+.cdata {
+  font-weight: bold;
+  color: #999;
+}
+
+.deletion {
+  background: #fdd;
+}
+
+.addition {
+  background: #dfd;
+}
+
+.diff .change {
+  background: #0086b3;
+}
+
+.chunk {
+  color: #aaa;
+}
+
+
+table.table.files {
+  text-align: left;
+}
