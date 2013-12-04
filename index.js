@@ -6,7 +6,7 @@ var marked  = require('marked')
   , fs      = require('fs')
   , hljs    = require('highlight.js')
   , path    = require('path')
-  , pkg     = { version: '0.0.1' }
+  , pkg     = require('./package')
   , log     = require('npmlog')
   , cwd     = process.cwd()
 
