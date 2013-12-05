@@ -1,0 +1,307 @@
+@import "variables.less";
+@import "base.less";
+
+html {
+  font-size: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  color: #333;
+  background-color: #fff;
+}
+
+a {
+  color: #3a89a3;
+  &:hover {
+    text-decoration: none;
+    color: #2fa0bb;
+  }
+  
+  &:hover,
+  &:focus {
+    color: #005580;
+    text-decoration: underline;
+  }
+  
+  &:hover,
+  &:active {
+    outline: 0;
+  }
+}
+table.table.files {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  -webkit-border-horizontal-spacing: 2px;
+  -webkit-border-vertical-spacing: 2px;
+  border-color: gray;
+  border-collapse: collapse;
+  border-spacing: 0;
+  max-width: 100%;
+  margin-bottom: 18px;
+  border-radius: 0;
+  border: 0;
+  tr th {
+    font-weight: normal;
+    font-size: 15px;
+    border: 0;
+    border-bottom: 1px solid #CCC;
+    padding: 8px 10px;
+    line-height: 20px;
+    vertical-align: bottom;
+    text-align: left;
+  }
+  tr {
+    td {
+      vertical-align: middle;
+      border-color: #F1F1F1;
+      border: 0;
+      padding: 8px 10px;
+      line-height: 20px;
+      text-align: left;
+      border-top: 1px solid #ddd;
+      font-size: 13px;
+      display: table-cell;
+      border-bottom: 1px solid transparent;
+    }
+    
+    &:hover td {
+      background: #d9edf7;
+      border-top: 1px solid #ADF;
+      border-bottom: 1px solid #ADF;
+      cursor: pointer;
+    }
+  }
+}
+
+.readme {
+  border: 1px solid #CCC;
+  margin-bottom: 1em;
+  text-align: left;
+  span.name {
+    background: #DDD;
+    display: block;
+    border-bottom: 1px solid #CCC;
+    text-shadow: 0 1px 1px #fff;
+    margin: 0;
+    font-weight: bold;
+    text-align: left;
+    color: #474d57;
+    padding: 9px 10px;
+    height: 18px;
+  }
+  
+  .markdown-body {
+    padding: 20px;
+    font-size: 14px;
+    line-height: 1.6;
+    background: #fff;
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 500;
+      line-height: 1.1;
+      margin: 9px 0;
+    }
+    
+    h1 {
+      margin-top: 45px;
+      font-size: 2.5em;
+    }
+    h2 {
+      margin-top: 40px;
+      font-size: 2em;
+    }
+    h3 {
+      margin-top: 35px;
+      font-size: 2em;
+    }
+    h4 {
+      margin-top: 30px;
+      font-size: 1.5em;
+    }
+    p {
+      margin: 0 0 9px;
+    }
+    ul, ol {
+      margin: 0 0 9px 25px;
+      padding: 0;
+    }
+    
+    li {
+      line-height: 1.5;
+    }
+    
+    code {
+      font-size: inherit;
+      font-weight: inherit;
+      color: #555;
+      padding: 0 4px;
+      background-color: #f7f7f9;
+      border: 1px solid #e1e1e8;
+    }
+    
+    code, pre {
+      font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+      border-radius: 3px;
+    }
+    
+    pre {
+      margin: 0;
+      background-color: #272822;
+      color: #f8f8f2;
+      font-family: Menlo, "Liberation Mono", Consolas, "Courier New", "andale mono", "lucida console", monospace;
+      display: block;
+      overflow: auto;
+      padding: 8.5px;
+      margin: 0 0 9px;
+      font-size: 12px;
+      line-height: 18px;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 4px;
+      
+      > code {
+        white-space: pre;
+        margin: 0;
+        padding: 0;
+        border: none;
+        //color: #f8f8f2;
+      }
+      code {
+        margin: 0;
+        padding: 0;
+        word-wrap: normal;
+        background-color: transparent;
+        border: none;
+      }
+    }
+
+    *:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+
+.comment,
+.template_comment,
+.diff .header,
+.javadoc {
+  color: #75715e;
+}
+  
+.keyword,
+.css .rule .keyword,
+.winutils,
+.javascript .title,
+.nginx .title,
+.subst,
+.request,
+.status {
+  color: #f92672 !important;
+  font-weight: bold;
+}
+
+.number,
+.hexcolor,
+.ruby .constant {
+  color: #009999 !important;
+}
+
+.string,
+.tag .value,
+.phpdoc,
+.tex .formula {
+  color: #e6db74;
+}
+
+.title,
+.id {
+  font-weight: bold;
+  color: #900;
+}
+
+.javascript .title,
+.lisp .title,
+.clojure .title,
+.subst {
+  font-weight: normal;
+}
+
+.class .title,
+.haskell .type,
+.vhdl .literal,
+.tex .command {
+  font-weight: bold;
+  color: #458;
+}
+
+.tag,
+.tag .title,
+.rules .property,
+.django .tag .keyword {
+  font-weight: normal;
+  color: #000080;
+}
+
+.attribute,
+.variable,
+.lisp .body {
+  color: #008080;
+}
+
+.regexp {
+  color: #009926;
+}
+
+.class {
+  font-weight: bold;
+  color: #445588;
+}
+
+.symbol,
+.ruby .symbol .string,
+.lisp .keyword,
+.tex .special,
+.prompt {
+  color: #333;
+}
+
+.built_in,
+.lisp .title,
+.clojure .built_in {
+  color: #c96;
+}
+
+.boolean {
+  color: #ae81ff;
+}
+
+.preprocessor,
+.pi,
+.doctype,
+.shebang,
+.cdata {
+  font-weight: bold;
+  color: #999999;
+}
+
+.deletion {
+  background: #fdd;
+}
+
+.addition {
+  background: #dfd;
+}
+
+.diff .change {
+  background: #0086b3;
+}
+
+.chunk {
+  color: #aaa;
+}

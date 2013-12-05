@@ -10,23 +10,28 @@ var marked  = require('marked')
   , log     = require('npmlog')
   , cwd     = process.cwd()
 
-var markedOpts = {
-  gfm: true,
-  highlight: function(code, lang) {
-    if (lang === 'js') lang = 'javascript'
-    if (hljs.LANGUAGES[lang]) {
-      return hljs.highlight(lang, code).value
-    }
-  },
-  tables: true
-}
-
 program
   .version(pkg.version)
   .option('-v, --verbose', 'Increase verbosity')
   .option('-p, --port <port>', 'Port on which to run the server')
   .option('-c, --css <style>', 'Customize css')
   .parse(process.argv)
+
+function jsForTheme(theme) {
+  if (theme === 'gitlab') return 'javascript'
+  return 'js'
+}
+
+var markedOpts = {
+  gfm: true,
+  highlight: function(code, lang) {
+    if (lang === 'js') lang = jsForTheme(program.css)
+    if (hljs.LANGUAGES[lang]) {
+      return hljs.highlight(lang, code).value
+    }
+  },
+  tables: true
+}
 
 var serveDir = program.args.shift() || process.env.MDVIEW_ENV_DIR || cwd
 
@@ -40,7 +45,7 @@ var app = express()
 log.verbose('serve', 'serving from', serveDir)
 
 var exts = ['.md', '.markdown']
-var styles = ['default', 'github', 'npm']
+var styles = ['default', 'github', 'npm', 'gitlab']
 
 var stylesheet = ''
   , theme = 'default'
@@ -57,6 +62,10 @@ if (program.css) {
       case 'github':
         theme = 'github'
         stylesheet = '/css/github.css'
+        break
+      case 'gitlab':
+        theme = 'gitlab'
+        stylesheet = '/css/gitlab.css'
         break
       default:
         theme = 'custom'
