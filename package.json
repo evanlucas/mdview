@@ -11,7 +11,8 @@
     "express": "~3.4.4",
     "jade": "~0.35.0",
     "marked": "~0.2.10",
-    "npmlog": "~0.0.6"
+    "npmlog": "~0.0.6",
+    "highlight.js": "~7.5.0"
   },
   "devDependencies": {
     "grunt-modverify": "0.0.4",
