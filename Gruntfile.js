@@ -2,7 +2,8 @@ module.exports = function(grunt) {
   grunt.initConfig({
     recess: {
       options: {
-        compile: true
+        compile: true,
+        compress: true
       },
       github: {
         src: ['less/github.less'],
@@ -15,22 +16,26 @@ module.exports = function(grunt) {
       default: {
         src: ['less/hbc.less'],
         dest: 'public/css/style.css'
+      },
+      gitlab: {
+        src: ['less/gitlab.less'],
+        dest: 'public/css/gitlab.css'
       }
     },
-    
+
     watch: {
       recess: {
         files: 'less/*.less',
         tasks: ['recess']
       }
     },
-    
+
     modverify: {
       all: {
         options: {}
       }
     },
-    
+
     cafemocha: {
       test: {
         src: 'tests/test.js',
@@ -42,12 +47,12 @@ module.exports = function(grunt) {
       }
     }
   })
-  
+
   grunt.loadNpmTasks('grunt-recess')
   grunt.loadNpmTasks('grunt-contrib-watch')
   grunt.loadNpmTasks('grunt-modverify')
   grunt.loadNpmTasks('grunt-cafe-mocha')
-  
+
   grunt.registerTask('test', ['modverify', 'cafemocha'])
   grunt.registerTask('styles', ['recess'])
   grunt.registerTask('default', ['test'])
