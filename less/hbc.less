@@ -5,7 +5,7 @@ pre {
   background-color: transparent;
   border: none;
   border-radius: 0;
-  
+
   code {
     display: block;
     padding: 1em 1.6em 1em 1.2em;
@@ -17,14 +17,14 @@ pre {
     border-width: 1px 1px 1px 6px;
     border-radius: 0;
   }
-  
+
   .comment,
   .template_comment,
   .diff .header,
   .javadoc {
     color: #666 !important;
   }
-  
+
   .keyword,
   .css .rule .keyword,
   .winutils,
@@ -35,18 +35,15 @@ pre {
   .status {
     color: #c96 !important;
   }
-  
+
   .number,
   .hexcolor,
-  .ruby .constant {
-    color: #690 !important;
-  }
-  
+  .ruby .constant,
   .string,
   .tag .value,
   .phpdoc,
   .tex .formula {
-    color: #690;
+    color: #690 !important;
   }
 
   .title,
@@ -54,14 +51,14 @@ pre {
     font-weight: bold;
     color: #900;
   }
-  
+
   .javascript .title,
   .lisp .title,
   .clojure .title,
   .subst {
     font-weight: normal;
   }
-  
+
   .class .title,
   .haskell .type,
   .vhdl .literal,
@@ -69,7 +66,7 @@ pre {
     font-weight: bold;
     color: #458;
   }
-  
+
   .tag,
   .tag .title,
   .rules .property,
@@ -77,22 +74,22 @@ pre {
     font-weight: normal;
     color: #000080;
   }
-  
+
   .attribute,
   .variable,
   .lisp .body {
     color: #c96;
   }
-  
+
   .regexp {
     color: #690;
   }
-  
+
   .class {
     font-weight: bold;
     color: #458;
   }
-  
+
   .symbol,
   .ruby .symbol .string,
   .lisp .keyword,
@@ -100,13 +97,13 @@ pre {
   .prompt {
     color: #333;
   }
-  
+
   .built_in,
   .lisp .title,
   .clojure .built_in {
     color: #c96;
   }
-  
+
   .preprocessor,
   .pi,
   .doctype,
@@ -115,19 +112,19 @@ pre {
     font-weight: bold;
     color: #999;
   }
-  
+
   .deletion {
     background: #fdd;
   }
-  
+
   .addition {
     background: #dfd;
   }
-  
+
   .diff .change {
     background: #0086b3;
   }
-  
+
   .chunk {
     color: #aaa;
   }
@@ -137,11 +134,11 @@ pre {
 
 a {
   color: @link-color;
-  
+
   &.absent {
     color: #cc0000;
   }
-  
+
   &.anchor {
     display: block;
     padding-left: 30px;
@@ -152,7 +149,7 @@ a {
     left: 0;
     bottom: 0;
   }
-  
+
   &:hover {
     color: darken(@link-color, 10%);
   }
@@ -161,11 +158,11 @@ a {
   table, pre {
     page-break-inside: avoid;
   }
-  
+
   .pbr {
     page-break-after: always;
   }
-  
+
   hr {
     height: 4px;
     padding: 0;
@@ -239,7 +236,7 @@ blockquote {
   padding: 3px;
   background: #EEE;
   border-radius: 3px;
-    
+
   span.name {
     text-align: left;
     font-size: 16px;
@@ -253,7 +250,7 @@ blockquote {
     border-bottom: 0 none;
     background-color: #eaeaea;
   }
-  
+
   .markdown-body {
     padding: 30px;
     text-align: left;
@@ -270,7 +267,7 @@ table.table.files {
   border-top: none;
   border-radius: 3px;
   background: #f8f8f8;
-  
+
   td {
     padding: 7px 7px;
     vertical-align: inherit;
@@ -284,11 +281,11 @@ table.table.files {
     border-color: inherit;
     text-align: left;
   }
-  
+
   thead {
     border-top: 1px solid #d8d8d8;
   }
-  
+
   th {
     text-align: left;
     font-size: 16px;
