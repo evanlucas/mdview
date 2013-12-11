@@ -8,6 +8,7 @@ var marked  = require('marked')
   , path    = require('path')
   , pkg     = require('./package')
   , log     = require('npmlog')
+  , open    = require('open')
   , cwd     = process.cwd()
 
 program
@@ -15,6 +16,7 @@ program
   .option('-v, --verbose', 'Increase verbosity')
   .option('-p, --port <port>', 'Port on which to run the server')
   .option('-c, --css <style>', 'Customize css')
+  .option('-o, --open', 'Open in default browser')
   .parse(process.argv)
 
 function jsForTheme(theme) {
@@ -149,3 +151,7 @@ app.get('/:filename', function(req, res) {
 app.listen(port)
 log.info('listen', port)
 log.info('listen', 'To view the page,', 'open http://localhost:'+port)
+
+if (program.open) {
+  open('http://localhost:'+port)
+}

@@ -21,14 +21,15 @@ $ grunt test
 
 ```
   Usage: mdview [options]
-  
+
   Options:
-  
+
     -h, --help           output usage information
     -V, --version        output the version number
     -v, --verbose        Increase verbosity
     -p, --port <port>    Port on which to run the server (3000)
     -c, --css <style>    Customize css
+    -o, --open           Open in default browser
 
 ```
 
