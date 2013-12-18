@@ -26,6 +26,20 @@ function jsForTheme(theme) {
   return 'js'
 }
 
+function switchTheme(currentTheme) {
+  var html = '<ul class="theme">'
+  var themes = ['default', 'github', 'npm', 'gitlab']
+  themes.forEach(function(theme) {
+    if (currentTheme.toLowerCase() === theme) {
+      html += '<li class="theme-'+theme+'">'+theme+'</li>'
+    } else {
+      html += '<li class="theme-'+theme+'"><a href="#">'+theme+'</a></li>'
+    }
+  })
+  html += '</ul>'
+  return html
+}
+
 var markedOpts = {
   gfm: true,
   highlight: function(code, lang) {
@@ -97,6 +111,7 @@ app.use(function(req, res, next) {
   res.locals.cwd = serveDir
   res.locals.stylesheet = stylesheet
   res.locals.theme = theme
+  res.locals.switchTheme = switchTheme(theme)
   fs.readdir(serveDir, function(err, files) {
     if (err) return next(err)
     files = files.filter(function(file) {
