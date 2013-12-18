@@ -2,11 +2,32 @@ doctype 5
 html
   head
     link(rel='stylesheet', href=stylesheet)
+    style.
+      ul.theme {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        display: block;
+      }
+
+      ul.theme li {
+        text-decoration: none;
+        display: inline;
+        width: auto;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
     title #{title}
   body
     .container
       h3 MDView - a simple markdown viewer
-      h6 Using the <em>#{theme}</em> theme
+      - if (theme === 'custom')
+        h6 Using a <em>custom</em> theme
+      - else
+        h6 Using the <em>#{theme}</em> theme
+      h6 Available Themes
+      != switchTheme
       table.table.files
         thead
           tr
@@ -18,3 +39,46 @@ html
                 a(href='/'+file) #{file}
       block mainContent
       include copyright
+    script(type='text/javascript', src='//code.jquery.com/jquery-1.10.2.min.js')
+    script(type='text/javascript').
+      $(document).ready(function() {
+        $('body').on('click', '.theme-default a', function(e) {
+          e.preventDefault()
+          $('link[rel=stylesheet]').attr('href', '/css/style.css')
+          $('.theme-default').text('default')
+          $('.theme-github').html('<a href="#">github</a>')
+          $('.theme-npm').html('<a href="#">npm</a>')
+          $('.theme-gitlab').html('<a href="#">gitlab</a>')
+          return false
+        })
+
+        $('body').on('click', '.theme-github a', function(e) {
+          e.preventDefault()
+          $('link[rel=stylesheet]').attr('href', '/css/github.css')
+          $('.theme-default').html('<a href="#">default</a>')
+          $('.theme-github').text('github')
+          $('.theme-npm').html('<a href="#">npm</a>')
+          $('.theme-gitlab').html('<a href="#">gitlab</a>')
+          return false
+        })
+
+        $('body').on('click', '.theme-npm a', function(e) {
+          e.preventDefault()
+          $('link[rel=stylesheet]').attr('href', '/css/npm.css')
+          $('.theme-default').html('<a href="#">default</a>')
+          $('.theme-github').html('<a href="#">github</a>')
+          $('.theme-npm').text('npm')
+          $('.theme-gitlab').html('<a href="#">gitlab</a>')
+          return false
+        })
+
+        $('body').on('click', '.theme-gitlab a', function(e) {
+          e.preventDefault()
+          $('link[rel=stylesheet]').attr('href', '/css/gitlab.css')
+          $('.theme-default').html('<a href="#">default</a>')
+          $('.theme-github').html('<a href="#">github</a>')
+          $('.theme-npm').html('<a href="#">npm</a>')
+          $('.theme-gitlab').text('gitlab')
+          return false
+        })
+      })
