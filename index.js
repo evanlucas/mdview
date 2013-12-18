@@ -11,6 +11,8 @@ var marked  = require('marked')
   , open    = require('open')
   , cwd     = process.cwd()
 
+process.title = 'mdview'
+
 program
   .version(pkg.version)
   .option('-v, --verbose', 'Increase verbosity')
