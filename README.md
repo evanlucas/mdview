@@ -40,6 +40,7 @@ Currently, the following styles are available by default
 - default
 - npm
 - github
+- gitlab (still needs work)
 
 One can pass in the path to another css file that will be used
 
