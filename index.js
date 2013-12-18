@@ -134,6 +134,7 @@ app.get('/:filename', function(req, res, next) {
   var fullPath = path.join(serveDir, pathname)
   fs.exists(fullPath, function(e) {
     res.locals.path = path.basename(pathname)
+    res.locals.title = path.basename(pathname)
     if (!e) {
       res.status(404).render('404')
     } else {
@@ -157,7 +158,6 @@ app.get('/:filename', function(req, res) {
             res.status(500).render('invalid')
           } else {
             res.render('file', {
-              title: path.basename(pathname),
               content: contents
             })
           }
