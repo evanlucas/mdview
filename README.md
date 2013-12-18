@@ -1,6 +1,6 @@
 # mdview
 
-A very simple markdown viewer
+A very simple markdown viewer that allows one to test his or her readme prior to pushing to GitHub, GitLab, or publishing to the npm registry.
 
 ## Install
 
