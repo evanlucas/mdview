@@ -23,9 +23,9 @@ html
     .container
       h3 MDView - a simple markdown viewer
       - if (theme === 'custom')
-        h6 Using a <em>custom</em> theme
+        h6 Using a <em class="theme-name">custom</em> theme
       - else
-        h6 Using the <em>#{theme}</em> theme
+        h6 Using the <em class="theme-name">#{theme}</em> theme
       h6 Available Themes
       != switchTheme
       table.table.files
@@ -49,6 +49,7 @@ html
           $('.theme-github').html('<a href="#">github</a>')
           $('.theme-npm').html('<a href="#">npm</a>')
           $('.theme-gitlab').html('<a href="#">gitlab</a>')
+          $('.theme-name').text('default')
           return false
         })
 
@@ -59,6 +60,7 @@ html
           $('.theme-github').text('github')
           $('.theme-npm').html('<a href="#">npm</a>')
           $('.theme-gitlab').html('<a href="#">gitlab</a>')
+          $('.theme-name').text('github')
           return false
         })
 
@@ -69,6 +71,7 @@ html
           $('.theme-github').html('<a href="#">github</a>')
           $('.theme-npm').text('npm')
           $('.theme-gitlab').html('<a href="#">gitlab</a>')
+          $('.theme-name').text('npm')
           return false
         })
 
@@ -79,6 +82,7 @@ html
           $('.theme-github').html('<a href="#">github</a>')
           $('.theme-npm').html('<a href="#">npm</a>')
           $('.theme-gitlab').text('gitlab')
+          $('.theme-name').text('gitlab')
           return false
         })
       })
