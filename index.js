@@ -85,11 +85,10 @@ if (program.css) {
         theme = 'gitlab'
         stylesheet = '/css/gitlab.css'
         break
-      default:
-        theme = 'custom'
-        stylesheet = program.css
-        break
     }
+  } else {
+    theme = 'custom'
+    stylesheet = program.css
   }
 } else {
   stylesheet = '/css/style.css'
@@ -100,6 +99,9 @@ log.verbose('load', 'stylesheet', stylesheet)
 
 
 app.use(express.static(__dirname + '/public'))
+if (theme === 'custom') {
+  app.use(express.static('/'))
+}
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jade')
 app.set('view options', { doctype: 'html', pretty: false })
