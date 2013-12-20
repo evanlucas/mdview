@@ -51,7 +51,7 @@ var markedOpts = {
   tables: true
 }
 
-var serveDir = program.args.shift() || process.env.MDVIEW_ENV_DIR || cwd
+var serveDir = process.env.MDVIEW_ENV_DIR || program.args.shift() || cwd
 
 log.heading = 'mdview'
 if (program.verbose) log.level = 'verbose'
