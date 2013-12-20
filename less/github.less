@@ -22,17 +22,17 @@ h1 { font-size: 30px; }
     line-height: 1.7;
     cursor: text;
   }
-  
+
   h1 {
     font-size: 2.5em;
     border-bottom: 1px solid #ddd;
   }
-  
+
   h2 {
     font-size: 2em;
     border-bottom: 1px solid #eee;
   }
-  
+
   code {
     font-size: 12px;
     margin: 0 2px;
@@ -42,7 +42,7 @@ h1 { font-size: 30px; }
     border-radius: 3px;
     color: #333333;
   }
-  
+
   pre {
     font-family: Consolas, "Liberation Mono", Courier, monospace;
     word-wrap: normal;
@@ -53,7 +53,7 @@ h1 { font-size: 30px; }
     overflow: auto;
     padding: 6px 10px;
     border-radius: 3px;
-    
+
     > code {
       white-space: pre;
       margin: 0;
@@ -61,7 +61,7 @@ h1 { font-size: 30px; }
       border: none;
       background: transparent;
     }
-    
+
     code {
       margin: 0;
       padding: 0;
@@ -85,7 +85,7 @@ hr {
   padding: 3px;
   background: #EEE;
   border-radius: 3px;
-    
+
   span.name {
     text-align: left;
     font-size: 16px;
@@ -103,7 +103,7 @@ hr {
     background-image: linear-gradient(#fafafa, #eaeaea);
     background-repeat: repeat-x;
   }
-  
+
   .markdown-body {
     font-size: 15px;
     padding: 30px;
@@ -136,11 +136,11 @@ table.table.files {
     border-color: inherit;
     text-align: left;
   }
-  
+
   thead tr {
     display: block;
   }
-  
+
   th {
     text-align: left;
     font-size: 14px;
@@ -174,7 +174,7 @@ a {
   &.absent {
     color: #cc0000;
   }
-  
+
   &.anchor {
     display: block;
     padding-left: 30px;
@@ -185,7 +185,7 @@ a {
     left: 0;
     bottom: 0;
   }
-  
+
   &:hover {
     outline: 0;
     text-decoration: underline;
@@ -197,11 +197,11 @@ a {
   table, pre {
     page-break-inside: avoid;
   }
-  
+
   .pbr {
     page-break-after: always;
   }
-  
+
   hr {
     height: 4px;
     padding: 0;
@@ -219,7 +219,7 @@ a {
   color: #999988 !important;
   font-style: italic;
 }
-  
+
 .keyword,
 .css .rule .keyword,
 .winutils,
@@ -243,12 +243,6 @@ a {
 .phpdoc,
 .tex .formula {
   color: #d01040;
-}
-
-.title,
-.id {
-  font-weight: bold;
-  color: #900;
 }
 
 .javascript .title,
@@ -336,7 +330,7 @@ ul {
   -webkit-margin-start: 0px;
   -webkit-margin-end: 0px;
   -webkit-padding-start: 40px;
-  
+
   ul {
     list-style-type: circle;
   }
@@ -344,4 +338,9 @@ ul {
 
 li {
   text-align: -webkit-match-parent;
+}
+
+code, kdb, pre, samp {
+    font-family: Consolas, "Liberation Mono", Courier, monospace !important;
+    font-size: 12px
 }
