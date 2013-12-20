@@ -19,13 +19,13 @@ a {
     text-decoration: none;
     color: #2fa0bb;
   }
-  
+
   &:hover,
   &:focus {
     color: #005580;
     text-decoration: underline;
   }
-  
+
   &:hover,
   &:active {
     outline: 0;
@@ -67,7 +67,7 @@ table.table.files {
       display: table-cell;
       border-bottom: 1px solid transparent;
     }
-    
+
     &:hover td {
       background: #d9edf7;
       border-top: 1px solid #ADF;
@@ -93,19 +93,19 @@ table.table.files {
     padding: 9px 10px;
     height: 18px;
   }
-  
+
   .markdown-body {
     padding: 20px;
     font-size: 14px;
     line-height: 1.6;
     background: #fff;
-    
+
     h1, h2, h3, h4, h5, h6 {
       font-weight: 500;
       line-height: 1.1;
       margin: 9px 0;
     }
-    
+
     h1 {
       margin-top: 45px;
       font-size: 2.5em;
@@ -129,11 +129,11 @@ table.table.files {
       margin: 0 0 9px 25px;
       padding: 0;
     }
-    
+
     li {
       line-height: 1.5;
     }
-    
+
     code {
       font-size: inherit;
       font-weight: inherit;
@@ -142,12 +142,12 @@ table.table.files {
       background-color: #f7f7f9;
       border: 1px solid #e1e1e8;
     }
-    
+
     code, pre {
       font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
       border-radius: 3px;
     }
-    
+
     pre {
       margin: 0;
       background-color: #272822 !important;
@@ -163,7 +163,7 @@ table.table.files {
       border: 1px solid #ccc;
       border: 1px solid rgba(0,0,0,0.15);
       border-radius: 4px;
-      
+
       > code {
         white-space: pre;
         margin: 0;
@@ -193,7 +193,7 @@ table.table.files {
 .javadoc {
   color: #75715e;
 }
-  
+
 .keyword,
 .css .rule .keyword,
 .winutils,
@@ -203,26 +203,26 @@ table.table.files {
 .request,
 .status {
   color: #f92672 !important;
-  font-weight: bold;
 }
 
 .number,
 .hexcolor,
-.ruby .constant {
-  color: #009999 !important;
+.ruby .constant,
+.boolean, .literal {
+  color: #ae81ff !important;
 }
 
 .string,
 .tag .value,
 .phpdoc,
-.tex .formula {
+.tex .formula,
+.regexp {
   color: #e6db74;
 }
 
 .title,
 .id {
-  font-weight: bold;
-  color: #900;
+  font-weight: normal;
 }
 
 .javascript .title,
@@ -254,10 +254,6 @@ table.table.files {
   color: #008080;
 }
 
-.regexp {
-  color: #009926;
-}
-
 .class {
   font-weight: bold;
   color: #445588;
@@ -275,10 +271,6 @@ table.table.files {
 .lisp .title,
 .clojure .built_in {
   color: #c96;
-}
-
-.boolean {
-  color: #ae81ff;
 }
 
 .preprocessor,
