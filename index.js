@@ -33,7 +33,7 @@ function switchTheme(currentTheme) {
     if (currentTheme.toLowerCase() === theme) {
       html += '<li class="theme-'+theme+'">'+theme+'</li>'
     } else {
-      html += '<li class="theme-'+theme+'"><a href="#">'+theme+'</a></li>'
+      html += '<li class="theme-'+theme+'"><a href="#'+theme+'">'+theme+'</a></li>'
     }
   })
   html += '</ul>'
