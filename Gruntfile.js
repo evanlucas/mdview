@@ -32,7 +32,11 @@ module.exports = function(grunt) {
 
     modverify: {
       all: {
-        options: {}
+        options: {
+          filefilter: ['index.js'],
+          directoryFilter: ['!.git', '!node_modules'],
+          excludes: [ './_http_agent.js']
+        }
       }
     },
 
