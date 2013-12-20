@@ -60,7 +60,7 @@ var port = +program.port || 3000
 
 var app = express()
 
-log.verbose('serve', 'serving from', serveDir)
+log.info('serve', 'serving from', serveDir)
 
 var exts = ['.md', '.markdown']
 var styles = ['default', 'github', 'npm', 'gitlab']
