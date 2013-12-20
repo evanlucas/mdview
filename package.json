@@ -1,7 +1,7 @@
 {
   "name": "mdview",
   "version": "0.0.5",
-  "description": "A simple markdown viewer",
+  "description": "A markdown viewer that allows one to test his or her readme prior to pushing to GitHub, GitLab, or publishing to the npm registry.",
   "main": "index.js",
   "bin": {
     "mdview": "index.js"
