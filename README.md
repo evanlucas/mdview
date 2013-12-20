@@ -1,5 +1,7 @@
 # mdview
 
+[![Build Status](https://travis-ci.org/evanlucas/mdview.png?branch=master)](https://travis-ci.org/evanlucas/mdview)
+
 A very simple markdown viewer that allows one to test his or her readme prior to pushing to GitHub, GitLab, or publishing to the npm registry.
 
 ## Install
