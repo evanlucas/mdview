@@ -43,7 +43,7 @@ function switchTheme(currentTheme) {
 var markedOpts = {
   gfm: true,
   highlight: function(code, lang) {
-    if (lang === 'js') lang = jsForTheme(program.css)
+    if (lang === 'js') lang = 'javascript'
     if (hljs.LANGUAGES[lang]) {
       return hljs.highlight(lang, code).value
     }
