@@ -21,11 +21,6 @@ program
   .option('-o, --open', 'Open in default browser')
   .parse(process.argv)
 
-function jsForTheme(theme) {
-  if (theme === 'gitlab') return 'javascript'
-  return 'js'
-}
-
 function switchTheme(currentTheme) {
   var html = '<ul class="theme">'
   var themes = ['default', 'github', 'npm', 'gitlab']
