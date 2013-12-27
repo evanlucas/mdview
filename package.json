@@ -6,6 +6,9 @@
   "bin": {
     "mdview": "index.js"
   },
+  "directories": {
+    "man": "./man"
+  },
   "dependencies": {
     "commander": "~2.0.0",
     "express": "~3.4.4",

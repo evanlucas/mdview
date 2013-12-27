@@ -1,0 +1,61 @@
+.\" Manpage for mdview
+.\" see https://github.com/evanlucas/mdview
+.TH "mdview" "1" "12/27/2013" "0.0.5" "mdview man page"
+.SH "NAME"
+\fBmdview\fR \-\- A local markdown viewer
+.SH "SYNOPSIS"
+mdview [options]
+.SH "DESCRIPTION"
+A very simple markdown viewer that allows one to test his or her readme prior to pushing to GitHub, GitLab, or publishing to the npm registry\.
+
+.SH "OPTIONS"
+
+.nf
+\-h, \-\-help           output usage information
+\-V, \-\-version        output the version number
+\-v, \-\-verbose        Increase verbosity
+\-p, \-\-port <port>    Port on which to run the server (3000)
+\-c, \-\-css <style>    Customize css
+\-o, \-\-open           Open in default browser
+.
+.fi
+.
+.IP "" 0
+.
+.P
+\fB\fR
+.
+.SH "STYLES"
+.
+.IP "\(bu" 4
+npm
+.
+.IP "" 4
+.
+.nf
+  mdview -c npm
+.IP "\(bu" 4
+GitHub
+.
+.IP "" 4
+.
+.nf
+  mdview -c github
+.IP "\(bu" 4
+GitLab
+.
+.IP "" 4
+.
+.nf
+  mdview -c gitlab
+.IP "\(bu" 4
+/path/to/custom/css
+.
+.IP "" 4
+.
+.nf
+  mdview -c ./path/to/custom/css/file
+.
+
+.SH "COPYRIGHT"
+Evan Lucas 2013 - Licensed under the MIT LICENSE
